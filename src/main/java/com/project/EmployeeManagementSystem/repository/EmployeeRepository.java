@@ -10,9 +10,9 @@ import com.project.EmployeeManagementSystem.model.Employee;
 import com.project.EmployeeManagementSystem.util.HibernateUtil;
 
 public class EmployeeRepository {
+	static Transaction transaction=null;
 
 	public static Employee employeeExists(int id) {
-		Transaction transaction=null;
     	try{
     		Session session = HibernateUtil.getSessionFactory().openSession();
     		transaction= session.beginTransaction();
@@ -26,7 +26,6 @@ public class EmployeeRepository {
 		return null;
 	}
     public static void addEmployee(Employee e){
-    	Transaction transaction=null;
     	try{
     		Session session = HibernateUtil.getSessionFactory().openSession();
     		transaction= session.beginTransaction();
@@ -40,7 +39,6 @@ public class EmployeeRepository {
     }
     public static List<Employee> viewEmployeeDetails() {
     	List<Employee> employees=null;
-    	Transaction transaction=null;
     	try{
     		Session session = HibernateUtil.getSessionFactory().openSession();
     		transaction= session.beginTransaction();
@@ -58,7 +56,6 @@ public class EmployeeRepository {
     }
 
     public static void updateEmployeeInfo(Employee e,int id){
-    	Transaction transaction=null;
     	try{
     		Session session = HibernateUtil.getSessionFactory().openSession();
     		transaction= session.beginTransaction();
@@ -77,7 +74,6 @@ public class EmployeeRepository {
         
     }
     public static void deleteEmployee(Employee e){
-    	Transaction transaction=null;
     	try {
     		Session session= HibernateUtil.getSessionFactory().openSession();
     		transaction= session.beginTransaction();

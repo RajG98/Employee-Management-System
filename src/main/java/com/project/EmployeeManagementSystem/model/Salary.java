@@ -24,14 +24,32 @@ public class Salary {
 	@Column(name = "payment_date",nullable = false)
     private int payment_date;
 
-    public Salary( double salary_amount, int payment_date) {
+    public Salary( Employee emp, double salary_amount, int payment_date) {
+    	this.employee=emp;
         this.salary_amount = salary_amount;
         this.payment_date = payment_date;
     }
-
+    public Salary() {
+    	
+    }
 
     public Employee getEmployee() {
 		return employee;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setSalary_amount(double salary_amount) {
+		this.salary_amount = salary_amount;
+	}
+
+
+	public void setPayment_date(int payment_date) {
+		this.payment_date = payment_date;
 	}
 
 

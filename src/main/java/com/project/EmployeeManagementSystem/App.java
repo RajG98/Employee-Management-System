@@ -11,7 +11,11 @@ public class App
     public static void main( String[] args )
     {
 
-    	ShiftService.getShiftDetails();
+    	SalaryService.viewSalary();
+    	SalaryService.deleteSalary();
+
+    	SalaryService.viewSalary();
+
 
 
     }
